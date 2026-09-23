@@ -13,6 +13,8 @@ function calculateTicketPrice(quantity, basePrice, isPremium = false) {
     total *= 1.50;
   }
 
+  total -= 10;
+
   return Math.round(total);
 }
 

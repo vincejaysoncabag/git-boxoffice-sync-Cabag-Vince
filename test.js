@@ -15,12 +15,12 @@ assertEqual(tickets.isValidQuantity(0), false, 'a zero quantity is invalid');
 assertEqual(tickets.isValidQuantity(25), false, 'an order over 20 tickets is invalid');
 
 const price = tickets.calculateTicketPrice(3, 15.5);
-assertEqual(price, 47, 'price for 3 tickets at $15.50 each');
+assertEqual(price, 37, 'price for 3 tickets at $15.50 after $10 discount');
 
 const groupPrice = tickets.calculateTicketPrice(5, 15.5);
-assertEqual(groupPrice, 70, '5 tickets receive a 10% group discount');
+assertEqual(groupPrice, 60, '5 tickets receive a 10% group discount and $10 discount');
 
 const vipPrice = tickets.calculateTicketPrice(2, 20, true);
-assertEqual(vipPrice, 60, 'VIP premium seating adds a 50% surcharge');
+assertEqual(vipPrice, 50, 'VIP premium seating adds a 50% surcharge with $10 discount');
 
 process.exitCode = failures > 0 ? 1 : 0;
